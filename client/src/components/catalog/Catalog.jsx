@@ -22,7 +22,12 @@ export function Catalog() {
 
             {/* Main Content */}
             <main className="flex-1 p-10">
-                <h1 className="text-4xl font-bold mb-10 tracking-wide">All Products</h1>
+                <div className="flex items-center justify-between mb-10">
+                    <h1 className="text-4xl font-bold tracking-wide">All Products</h1>
+                    <button className="px-4 py-2 bg-indigo-800 hover:bg-indigo-600 rounded-md transition">
+                        Add item
+                    </button>
+                </div>
 
                 {/* Product Grid */}
                 <div className="grid grid-cols-3 gap-10">
