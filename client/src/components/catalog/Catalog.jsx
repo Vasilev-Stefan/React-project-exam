@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { FurnitureList } from "../furniture-list/FurnitureList";
 
 export function Catalog() {
@@ -26,9 +27,11 @@ export function Catalog() {
             <main className="flex-1 p-10">
                 <div className="flex items-center justify-between mb-10">
                     <h1 className="text-4xl font-bold tracking-wide">All Products</h1>
-                    <button className="px-4 py-2 bg-indigo-800 hover:bg-indigo-600 rounded-md transition">
-                        Add item
-                    </button>
+                    <Link to="/furniture/create">
+                        <button className="px-4 py-2 bg-indigo-800 hover:bg-indigo-600 rounded-md transition">
+                            Add item
+                        </button>
+                    </Link>
                 </div>
 
                 {/* Product Grid */}

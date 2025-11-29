@@ -6,6 +6,7 @@ import { Catalog } from "./components/catalog/Catalog";
 import { About } from "./components/about/About";
 import { Login } from "./components/login/Login";
 import { Register } from "./components/register/Register";
+import { CreateItem } from "./components/create-item/CreateItem";
 
 function App() {
 
@@ -13,12 +14,15 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Hero />}/>
-        <Route path="/catalog" element={<Catalog />}/>
-        <Route path="/about" element={<About />}/>
+        <Route path="/" element={<Hero />} />
+        <Route path="/catalog" element={<Catalog />} />
+        <Route path="/about" element={<About />} />
         <Route path="/user">
-          <Route path="login" element={<Login />}/>
-          <Route path="register" element={<Register />}/>
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+        </Route>
+        <Route path="/furniture">
+          <Route path="create" element={<CreateItem />} />
         </Route>
       </Routes>
       <Footer />
