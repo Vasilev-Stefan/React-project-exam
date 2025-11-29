@@ -2,7 +2,7 @@ import { Link } from 'react-router'
 
 export function Header() {
     return (
-        <nav className="text-white px-6 py-4 flex items-center justify-between" style={{ backgroundColor: '#222222' }}>
+        <nav className="text-white px-6 py-4 flex items-center justify-between sticky top-0 z-50" style={{ backgroundColor: '#222222' }}>
 
             <Link to='/' className='flex items-center'>
                 <svg
