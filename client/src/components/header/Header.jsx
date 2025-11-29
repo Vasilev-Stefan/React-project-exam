@@ -57,9 +57,21 @@ export function Header() {
 
             {/* Right-side Buttons */}
             <div className="flex gap-4">
-                <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">Button 1</button>
-                <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">Button 2</button>
-                <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">Button 3</button>
+                <Link to='/catalog'>
+                    <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">Catalog</button>
+                </Link>
+                <Link to='/about'>
+                    <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">About</button>
+                </Link>
+                <Link to='/user/login'>
+                    <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">Login</button>
+                </Link>
+                <Link to='/user/register'>
+                    <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">Register</button>
+                </Link>
+                <Link to='/user/logout'>
+                    <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">Logout</button>
+                </Link>
             </div>
 
         </nav>
