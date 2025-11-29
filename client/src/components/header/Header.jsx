@@ -2,7 +2,7 @@ import { Link } from 'react-router'
 
 export function Header() {
     return (
-        <nav className="bg-gray-900 text-white px-6 py-4 flex items-center justify-between">
+        <nav className="text-white px-6 py-4 flex items-center justify-between" style={{ backgroundColor: '#222222' }}>
 
             <Link to='/' className='flex items-center'>
                 <svg
@@ -15,7 +15,7 @@ export function Header() {
                     {/* <!-- Minimal House Icon --> */}
                     <path
                         d="M10 26 L30 10 L50 26"
-                        stroke="#4F46E5"
+                        stroke="#3730A3"
                         strokeWidth="4"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -28,7 +28,7 @@ export function Header() {
                         width="24"
                         height="18"
                         rx="3"
-                        fill="#4F46E5"
+                        fill="#3730A3"
                     />
 
                     {/* <!-- Text --> */}
@@ -57,9 +57,9 @@ export function Header() {
 
             {/* Right-side Buttons */}
             <div className="flex gap-4">
-                <button className="px-4 py-2 bg-gray-800 rounded hover:bg-gray-700 transition">Button 1</button>
-                <button className="px-4 py-2 bg-gray-800 rounded hover:bg-gray-700 transition">Button 2</button>
-                <button className="px-4 py-2 bg-blue-600 rounded hover:bg-blue-500 transition">Button 3</button>
+                <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">Button 1</button>
+                <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">Button 2</button>
+                <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">Button 3</button>
             </div>
 
         </nav>
