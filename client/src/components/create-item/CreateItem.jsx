@@ -1,6 +1,8 @@
 export function CreateItem() {
     return (
-        <div className="min-h-screen bg-[#1a1a1a] text-white px-10 py-16">
+        <div className=" bg-[#1a1a1a] text-white px-10 py-4" style={{
+                height: 'calc(100vh - 123px)'
+            }}>
 
             {/* Page Title */}
             <h1 className="text-4xl font-bold mb-10 tracking-wide text-center">
