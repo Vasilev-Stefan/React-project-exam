@@ -16,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="/catalog" element={<Catalog />} />
+        <Route path="/catalog/:category" element={<Catalog />} />
         <Route path="/about" element={<About />} />
         <Route path="/user">
           <Route path="login" element={<Login />} />
