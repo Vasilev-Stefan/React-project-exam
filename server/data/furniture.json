@@ -5,7 +5,7 @@
         "description": "A luxurious 3-seater velvet sofa with deep cushions and a sleek, modern design. Perfect for contemporary living rooms.",
         "price": 899,
         "category": "Sofas",
-        "imageUrl": "/public/images/sofa-velvet.png",
+        "imageUrl": "/images/sofa-velvet.png",
         "_createdOn": 1717194350000
     },
     "c48d2b6f-1a3c-4e59-9f81-7c3e124fbb21": {
@@ -14,7 +14,7 @@
         "description": "A handcrafted oak dining table with a natural wood finish. Seats up to six people comfortably.",
         "price": 650,
         "category": "Tables",
-        "imageUrl": "/public/images/oak-table.png",
+        "imageUrl": "/images/oak-table.png",
         "_createdOn": 1718208800000
     },
     "f7b3e8c9-5a4d-4c2f-9e3a-1d9b0a6c4e3f": {
@@ -23,7 +23,7 @@
         "description": "A queen-size memory foam bed designed to provide optimal support and comfort for a restful night’s sleep.",
         "price": 1200,
         "category": "Beds",
-        "imageUrl": "/public/images/memory-foam-bed.png",
+        "imageUrl": "/images/memory-foam-bed.png",
         "_createdOn": 1717194450000
     },
     "9d7a6b1c-3e4f-5a6d-8c9b-2f1e3d7b4a8f": {
@@ -32,7 +32,7 @@
         "description": "A breathable mesh office chair with lumbar support, adjustable height, and a comfortable cushioned seat.",
         "price": 199,
         "category": "Chairs",
-        "imageUrl": "/public/images/office-chair.png",
+        "imageUrl": "/images/office-chair.jpeg",
         "_createdOn": 1707558400000
     },
     "d4637c90-094b-4c02-843b-ef597d13afdf": {
@@ -41,7 +41,7 @@
         "description": "A matte-black industrial-style pendant light designed to add character and ambient lighting to modern spaces.",
         "price": 129,
         "category": "Lighting",
-        "imageUrl": "https://example.com/images/industrial-light.jpg",
+        "imageUrl": "/images/industrial-light.png",
         "_createdOn": 1764026788146,
         "_id": "d4637c90-094b-4c02-843b-ef597d13afdf"
     },
@@ -51,7 +51,7 @@
         "description": "A floating wooden wall shelf ideal for storing books, decor items, and small household essentials.",
         "price": 79,
         "category": "Storage",
-        "imageUrl": "https://example.com/images/wall-shelf.png",
+        "imageUrl": "/images/wall-shelf.png",
         "_createdOn": 1764027198591,
         "_id": "2ac1c431-b15b-42d1-993e-aea53bffecae"
     },
@@ -61,7 +61,7 @@
         "description": "A set of handcrafted ceramic vases in matte pastel tones. Perfect for modern and minimalist home decor.",
         "price": 45,
         "category": "Decor",
-        "imageUrl": "/public/images/ceramic-vases.png",
+        "imageUrl": "/images/ceramic-vases.png",
         "_createdOn": 1719194355000
     }
 }

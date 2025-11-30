@@ -1,7 +1,17 @@
 import { Link } from "react-router";
 import { FurnitureList } from "../furniture-list/FurnitureList";
+import { useEffect, useState } from "react";
 
 export function Catalog() {
+    const [items, setItems] = useState([])
+
+    useEffect(() => {
+        fetch('http://localhost:3030/jsonstore/furniture')
+        .then(response => response.json())
+        .then(result => setItems(Object.entries(result)))
+        .catch(error => alert(error.message))
+    }, [setItems])
+
     return (
         <div className="min-h-screen bg-[#1a1a1a] text-white flex">
 
@@ -12,8 +22,8 @@ export function Catalog() {
                 </h2>
 
                 <ul className="space-y-3">
-                    <li><button className="w-full text-left px-4 py-2 rounded-md bg-indigo-800">All</button></li>
-                    <li><button className="w-full text-left px-4 py-2 rounded-md hover:bg-[#2a2a2a]">Sofas</button></li>
+                    <Link to='/catalog'><li><button className="w-full text-left px-4 py-2 rounded-md bg-indigo-800">All</button></li></Link>
+                    <Link to='/catalog/sofas'><li><button className="w-full text-left px-4 py-2 rounded-md hover:bg-[#2a2a2a]">Sofas</button></li></Link>
                     <li><button className="w-full text-left px-4 py-2 rounded-md hover:bg-[#2a2a2a]">Tables</button></li>
                     <li><button className="w-full text-left px-4 py-2 rounded-md hover:bg-[#2a2a2a]">Beds</button></li>
                     <li><button className="w-full text-left px-4 py-2 rounded-md hover:bg-[#2a2a2a]">Chairs</button></li>
@@ -37,14 +47,8 @@ export function Catalog() {
                 {/* Product Grid */}
                 <div className="grid grid-cols-3 gap-10">
 
-                    {/* Product 1 */}
-                    <FurnitureList />
+                    {items.map(item => <FurnitureList key={item[0]} data={item[1]}/>)}
 
-                    {/* Product 2 */}
-                    <FurnitureList />
-
-                    {/* Product 3 */}
-                    <FurnitureList />
 
                 </div>
             </main>
