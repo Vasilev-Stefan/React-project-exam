@@ -7,6 +7,7 @@ import { About } from "./components/about/About";
 import { Login } from "./components/login/Login";
 import { Register } from "./components/register/Register";
 import { CreateItem } from "./components/create-item/CreateItem";
+import { FurnitureDetails } from "./components/furniture-details/FurnitureDetails";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Hero />} />
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/catalog/:category" element={<Catalog />} />
+        <Route path="/catalog/details/:id" element={<FurnitureDetails />} />
         <Route path="/about" element={<About />} />
         <Route path="/user">
           <Route path="login" element={<Login />} />

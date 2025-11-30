@@ -62,7 +62,7 @@ export function Catalog() {
 
                     {filteredItems.length === 0 ?
                     <h2 className="text-3xl font-semibold mb-4">No products found</h2> : 
-                    filteredItems.map(item => <FurnitureList key={item[0]} data={item[1]} />)}
+                    filteredItems.map(item => <FurnitureList key={item[0]} id={item[0]} data={item[1]} />)}
 
 
                 </div>
