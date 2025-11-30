@@ -60,7 +60,9 @@ export function Catalog() {
                 {/* Product Grid */}
                 <div className="grid grid-cols-3 gap-10">
 
-                    {filteredItems.map(item => <FurnitureList key={item[0]} data={item[1]} />)}
+                    {filteredItems.length === 0 ?
+                    <h2 className="text-3xl font-semibold mb-4">No products found</h2> : 
+                    filteredItems.map(item => <FurnitureList key={item[0]} data={item[1]} />)}
 
 
                 </div>
