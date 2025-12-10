@@ -66,6 +66,7 @@ export function FurnitureEdit() {
         description: item?.description,
         price: item?.price,
         category: item.category,
+        number: item.number,
         imageUrl: item.imageUrl,
       });
     }
@@ -96,6 +97,22 @@ export function FurnitureEdit() {
               className="w-full px-4 py-2 bg-[#111111] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600"
             />
             {errors.name && <p className="text-red-500 mt-1">{errors.name}</p>}
+          </div>
+
+          {/* Phone */}
+          <div>
+            <label className="block text-gray-300 mb-2 font-semibold">
+              Phone Number
+            </label>
+            <input
+              name="number"
+              onChange={onChangeHandler}
+              value={data?.number}
+              type="text"
+              placeholder="e.g., 0888111111"
+              className="w-full px-4 py-2 bg-[#111111] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            />
+            {errors.number && <p className="text-red-500 mt-1">{errors.number}</p>}
           </div>
 
           {/* Description */}

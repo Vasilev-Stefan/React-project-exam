@@ -66,6 +66,10 @@ export function FurnitureDetails() {
                 ${item?.price}
               </p>
 
+              <p className="text-gray-400 tracking-wider">
+                Phone: {item?.number}
+              </p>
+
               <p className="uppercase text-gray-400 tracking-wider">
                 Category: <span className="text-white">{item?.category}</span>
               </p>

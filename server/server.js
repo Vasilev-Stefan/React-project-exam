@@ -1343,7 +1343,7 @@
             "category": "Sofas",
             "imageUrl": "/images/sofa-velvet.png",
             "_createdOn": 1717194350000,
-            "likedBy": []
+            "number": "0888111111"
     },
     "c48d2b6f-1a3c-4e59-9f81-7c3e124fbb21": {
         "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
@@ -1353,7 +1353,7 @@
         "category": "Tables",
         "imageUrl": "/images/oak-table.png",
         "_createdOn": 1718208800000,
-        "likedBy": []
+        "number": "0888111111"
     },
     "f7b3e8c9-5a4d-4c2f-9e3a-1d9b0a6c4e3f": {
         "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
@@ -1363,7 +1363,7 @@
         "category": "Beds",
         "imageUrl": "/images/memory-foam-bed.png",
         "_createdOn": 1717194450000,
-        "likedBy": []
+        "number": "0888111111"
     },
     "9d7a6b1c-3e4f-5a6d-8c9b-2f1e3d7b4a8f": {
         "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
@@ -1373,7 +1373,7 @@
         "category": "Chairs",
         "imageUrl": "/images/office-chair.jpeg",
         "_createdOn": 1707558400000,
-        "likedBy": []
+        "number": "0888111111"
     },
     "d4637c90-094b-4c02-843b-ef597d13afdf": {
         "_ownerId": "No owner yet",
@@ -1384,7 +1384,7 @@
         "imageUrl": "/images/industrial-light.png",
         "_createdOn": 1764026788146,
         "_id": "d4637c90-094b-4c02-843b-ef597d13afdf",
-        "likedBy": []
+        "number": "0888111111"
     },
     "2ac1c431-b15b-42d1-993e-aea53bffecae": {
         "_ownerId": "No owner yet",
@@ -1395,7 +1395,7 @@
         "imageUrl": "/images/wall-shelf.png",
         "_createdOn": 1764027198591,
         "_id": "2ac1c431-b15b-42d1-993e-aea53bffecae",
-        "likedBy": []
+        "number": "0888111111"
     },
     "e59b4d1c-7a3e-4b21-9c8a-0d3e2c9f4b7a": {
         "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
@@ -1405,7 +1405,7 @@
         "category": "Decor",
         "imageUrl": "/images/ceramic-vases.png",
         "_createdOn": 1719194355000,
-        "likedBy": []
+        "number": "0888111111"
     }
 }, likes: {
 
