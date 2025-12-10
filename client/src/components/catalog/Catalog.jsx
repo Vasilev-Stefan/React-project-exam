@@ -1,30 +1,30 @@
 import { Link, useParams } from "react-router";
 import { FurnitureList } from "../furniture-list/FurnitureList";
-import { useEffect, useState } from "react";
+import { useFetch } from "../../hooks/useFetch";
 
 export function Catalog() {
-    const [items, setItems] = useState([])
+    const { data: items} = useFetch('data/furniture')
 
     const { category } = useParams()
 
-    useEffect(() => {
-        fetch('http://localhost:3030/jsonstore/furniture')
-            .then(response => response.json())
-            .then(result => setItems(Object.entries(result)))
-            .catch(error => alert(error.message))
-    }, [setItems])
-
-    let filteredItems = items.slice()
-    switch (category) {
-        case 'sofas': filteredItems = filteredItems.filter(([id, item]) => item.category.toLowerCase() === category.toLowerCase()); break;
-        case 'tables': filteredItems = filteredItems.filter(([id, item]) => item.category.toLowerCase() === category.toLowerCase()); break;
-        case 'beds': filteredItems = filteredItems.filter(([id, item]) => item.category.toLowerCase() === category.toLowerCase()); break;
-        case 'chairs': filteredItems = filteredItems.filter(([id, item]) => item.category.toLowerCase() === category.toLowerCase()); break;
-        case 'lighting': filteredItems = filteredItems.filter(([id, item]) => item.category.toLowerCase() === category.toLowerCase()); break;
-        case 'storage': filteredItems = filteredItems.filter(([id, item]) => item.category.toLowerCase() === category.toLowerCase()); break;
-        case 'decor': filteredItems = filteredItems.filter(([id, item]) => item.category.toLowerCase() === category.toLowerCase()); break;
+    // useEffect(() => {
+    //     fetch('http://localhost:3030/jsonstore/furniture')
+    //         .then(response => response.json())
+    //         .then(result => setItems(Object.entries(result)))
+    //         .catch(error => alert(error.message))
+    // }, [setItems])
+    let filteredItems = items?.slice()
+    if(items){
+        switch (category) {
+            case 'sofas': filteredItems = filteredItems.filter((item) => item.category.toLowerCase() === category.toLowerCase()); break;
+            case 'tables': filteredItems = filteredItems.filter((item) => item.category.toLowerCase() === category.toLowerCase()); break;
+            case 'beds': filteredItems = filteredItems.filter((item) => item.category.toLowerCase() === category.toLowerCase()); break;
+            case 'chairs': filteredItems = filteredItems.filter((item) => item.category.toLowerCase() === category.toLowerCase()); break;
+            case 'lighting': filteredItems = filteredItems.filter((item) => item.category.toLowerCase() === category.toLowerCase()); break;
+            case 'storage': filteredItems = filteredItems.filter((item) => item.category.toLowerCase() === category.toLowerCase()); break;
+            case 'decor': filteredItems = filteredItems.filter((item) => item.category.toLowerCase() === category.toLowerCase()); break;
+        }
     }
-
     return (
         <div className="min-h-screen bg-[#1a1a1a] text-white flex">
 
@@ -60,9 +60,9 @@ export function Catalog() {
                 {/* Product Grid */}
                 <div className="grid grid-cols-3 gap-10">
 
-                    {filteredItems.length === 0 ?
+                    {filteredItems?.length === 0 ?
                     <h2 className="text-3xl font-semibold mb-4">No products found</h2> : 
-                    filteredItems.map(item => <FurnitureList key={item[0]} id={item[0]} data={item[1]} />)}
+                    filteredItems?.map(item => <FurnitureList key={item._id} id={item._id} data={item} />)}
 
 
                 </div>
