@@ -39,6 +39,7 @@ export function CreateItem() {
     }
 
     const create = async (data) => {
+        data.price = Number(data.price)
         try {
             const result = await request('data/furniture', 'POST', data)
             console.log(result)
