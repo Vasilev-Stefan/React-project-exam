@@ -83,7 +83,7 @@ export function Register() {
                             placeholder="John Doe"
                             className="w-full px-4 py-2 bg-[#111111] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600"
                         />
-                        {errors.name && <p>{errors.name}</p>}
+                        {errors.name && <p className="text-red-500 mt-1">{errors.name}</p>}
                     </div>
 
                     {/* Email */}
@@ -97,7 +97,7 @@ export function Register() {
                             placeholder="you@example.com"
                             className="w-full px-4 py-2 bg-[#111111] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600"
                         />
-                        {errors.email && <p>{errors.email}</p>}
+                        {errors.email && <p className="text-red-500 mt-1">{errors.email}</p>}
                     </div>
 
                     {/* Password */}
@@ -111,7 +111,7 @@ export function Register() {
                             placeholder="********"
                             className="w-full px-4 py-2 bg-[#111111] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600"
                         />
-                        {errors.password && <p>{errors.password}</p>}
+                        {errors.password && <p className="text-red-500 mt-1">{errors.password}</p>}
                     </div>
 
                     {/* Confirm Password */}
@@ -125,7 +125,7 @@ export function Register() {
                             placeholder="********"
                             className="w-full px-4 py-2 bg-[#111111] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600"
                         />
-                        {errors.rePass && <p>{errors.rePass}</p>}
+                        {errors.rePass && <p className="text-red-500 mt-1">{errors.rePass}</p>}
                     </div>
 
                     {/* Submit Button */}
