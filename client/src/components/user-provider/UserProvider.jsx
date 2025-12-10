@@ -9,7 +9,13 @@ export function UserProvider({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(() => !!localStorage.getItem("user"));
 
   const login = (userData) => {
-    setUser(userData);
+    const dataToStore = {
+      email: userData.email,
+      name: userData.name,
+      _id: userData._id,
+      accessToken: userData.accessToken
+    }
+    setUser(dataToStore);
     setIsAuthenticated(true);
     localStorage.setItem("user", JSON.stringify({email: userData.email, accessToken: userData.accessToken, _id: userData._id}));
   };
