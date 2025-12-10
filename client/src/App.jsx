@@ -13,7 +13,7 @@ import { Logout } from "./components/logout/Logout";
 import { ProtectedRoute } from "./components/protected-route/ProtectedRoute";
 import { FurnitureEdit } from "./components/furniture-edit/FurnitureEdit";
 import { FurnitureDelete } from "./components/furniture-delete/FurnitureDelete";
-import { FurnitureLike } from "./components/furniture-lie/FurnitureLike";
+import { FurnitureLike } from "./components/furniture-like/FurnitureLike";
 
 function App() {
 

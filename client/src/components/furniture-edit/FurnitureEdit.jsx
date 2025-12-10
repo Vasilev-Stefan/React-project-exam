@@ -7,13 +7,13 @@ import { useUser } from "../../hooks/useUser";
 export function FurnitureEdit() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { user } = useUser;
+  const { user } = useUser();
 
   const { request, data: item } = useFetch(`data/furniture/${id}`, [id]);
 
   useEffect(() => {
-    if (item && user && item._ownerId !== user._id) {
-      navigate("/catalog");
+    if (item && user && user._id !== item._ownerId) {
+      navigate(`/catalog/details/${id}`);
     }
   }, [item, user, navigate]);
 
@@ -111,7 +111,9 @@ export function FurnitureEdit() {
               rows="4"
               className="w-full px-4 py-2 bg-[#111111] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600"
             ></textarea>
-            {errors.description && <p className="text-red-500 mt-1">{errors.description}</p>}
+            {errors.description && (
+              <p className="text-red-500 mt-1">{errors.description}</p>
+            )}
           </div>
 
           {/* Price */}
@@ -127,7 +129,9 @@ export function FurnitureEdit() {
               placeholder="e.g., 499"
               className="w-full px-4 py-2 bg-[#111111] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600"
             />
-            {errors.price && <p className="text-red-500 mt-1">{errors.price}</p>}
+            {errors.price && (
+              <p className="text-red-500 mt-1">{errors.price}</p>
+            )}
           </div>
 
           {/* Category */}
@@ -149,7 +153,9 @@ export function FurnitureEdit() {
               <option value="storage">Storage</option>
               <option value="decor">Decor</option>
             </select>
-            {errors.category && <p className="text-red-500 mt-1">{errors.category}</p>}
+            {errors.category && (
+              <p className="text-red-500 mt-1">{errors.category}</p>
+            )}
           </div>
 
           {/* Image URL */}
@@ -165,7 +171,9 @@ export function FurnitureEdit() {
               placeholder="https://example.com/image.jpg"
               className="w-full px-4 py-2 bg-[#111111] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600"
             />
-            {errors.imageUrl && <p className="text-red-500 mt-1">{errors.imageUrl}</p>}
+            {errors.imageUrl && (
+              <p className="text-red-500 mt-1">{errors.imageUrl}</p>
+            )}
           </div>
 
           {/* Submit Button */}

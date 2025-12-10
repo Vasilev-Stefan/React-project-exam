@@ -88,15 +88,23 @@ export function FurnitureDetails() {
               ""
             )}
 
-            {isAuthenticated && user?._id !== item?._ownerId && (
-              <Link
-                to={isLiked ? '#' : `/catalog/like/${id}`}
-                className="w-full py-3 bg-pink-600 hover:bg-pink-500 rounded-md font-semibold transition text-lg flex items-center justify-between px-4"
-              >
-                {isLiked ? 'Already liked' : 'Like'}
-                <span className="bg-white text-pink-600 px-2 py-1 rounded-full text-sm">Likes: {furnitureLikes}</span>
-              </Link>
-            )}
+            <Link
+  to={isAuthenticated 
+        ? isLiked 
+          ? '#' 
+          : `/catalog/like/${id}` 
+        : '/user/login'}
+  className={`w-full py-3 rounded-md font-semibold transition text-lg flex items-center justify-between px-4
+    ${isAuthenticated && isLiked 
+      ? 'bg-gray-500 cursor-not-allowed'  // greyed out for already liked items
+      : 'bg-pink-600 hover:bg-pink-500'   // normal like button
+    }`}
+>
+  {isAuthenticated && isLiked ? 'Already liked' : 'Like'}
+  <span className="bg-white text-pink-600 px-2 py-1 rounded-full text-sm">
+    Likes: {furnitureLikes}
+  </span>
+</Link>
           </div>
         </div>
       </div>
