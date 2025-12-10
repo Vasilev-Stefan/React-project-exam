@@ -10,6 +10,7 @@ import { CreateItem } from "./components/create-item/CreateItem";
 import { FurnitureDetails } from "./components/furniture-details/FurnitureDetails";
 import { UserProvider } from "./components/user-provider/UserProvider";
 import { Logout } from "./components/logout/Logout";
+import { ProtectedRoute } from "./components/protected-route/ProtectedRoute";
 
 function App() {
 
@@ -28,7 +29,11 @@ function App() {
           <Route path="logout" element={<Logout />} />
         </Route>
         <Route path="/furniture">
-          <Route path="create" element={<CreateItem />} />
+          <Route path="create" element={
+            <ProtectedRoute>
+              <CreateItem />
+            </ProtectedRoute>
+            } />
         </Route>
       </Routes>
       <Footer />
