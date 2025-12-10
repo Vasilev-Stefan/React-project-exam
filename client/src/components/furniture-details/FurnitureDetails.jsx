@@ -9,7 +9,7 @@ export function FurnitureDetails() {
         fetch(`http://localhost:3030/jsonstore/furniture/${id}`)
         .then(response => response.json())
         .then(result => setItem(result))
-    }, [setItem])
+    }, [id])
 
 
     return (
