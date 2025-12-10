@@ -1,55 +1,57 @@
-import { Link } from 'react-router'
-import { useUser } from '../../hooks/useUser'
+import { Link } from "react-router";
+import { useUser } from "../../hooks/useUser";
 
 export function Header() {
-    const { isAuthenticated } = useUser()
-    return (
-        <nav className="text-white px-6 py-4 flex items-center justify-between sticky top-0 z-50" style={{ backgroundColor: '#222222' }}>
+  const { isAuthenticated, user } = useUser();
+  return (
+    <nav
+      className="text-white px-6 py-4 flex items-center justify-between sticky top-0 z-50"
+      style={{ backgroundColor: "#222222" }}
+    >
+      <Link to="/" className="flex items-center">
+        <svg
+          width="190"
+          height="55"
+          viewBox="0 0 190 55"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* <!-- Minimal House Icon --> */}
+          <path
+            d="M10 26 L30 10 L50 26"
+            stroke="#3730A3"
+            strokeWidth="4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
 
-            <Link to='/' className='flex items-center'>
-                <svg
-                    width="190"
-                    height="55"
-                    viewBox="0 0 190 55"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    {/* <!-- Minimal House Icon --> */}
-                    <path
-                        d="M10 26 L30 10 L50 26"
-                        stroke="#3730A3"
-                        strokeWidth="4"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                    />
+          {/* <!-- House body --> */}
+          <rect x="18" y="26" width="24" height="18" rx="3" fill="#3730A3" />
 
-                    {/* <!-- House body --> */}
-                    <rect
-                        x="18"
-                        y="26"
-                        width="24"
-                        height="18"
-                        rx="3"
-                        fill="#3730A3"
-                    />
+          {/* <!-- Text --> */}
+          <text
+            x="60"
+            y="38"
+            fontFamily="Inter, sans-serif"
+            fontSize="28"
+            fontWeight="600"
+            fill="#FFFFFF"
+          >
+            Nestora
+          </text>
+        </svg>
+      </Link>
 
-                    {/* <!-- Text --> */}
-                    <text
-                        x="60"
-                        y="38"
-                        fontFamily="Inter, sans-serif"
-                        fontSize="28"
-                        fontWeight="600"
-                        fill="#FFFFFF"
-                    >
-                        Nestora
-                    </text>
-                </svg>
-            </Link>
+      <div className="flex-1 text-center">
+        {isAuthenticated ? (
+          <span className="text-lg font-semibold">Welcome, {user?.name}</span>
+        ) : (
+          <span className="text-lg font-semibold">Welcome, guest</span>
+        )}
+      </div>
 
-
-            {/* Search Bar (center) */}
-            {/* <div className="flex-1 mx-6">
+      {/* Search Bar (center) */}
+      {/* <div className="flex-1 mx-6">
                 <input
                     type="text"
                     placeholder="Search..."
@@ -57,32 +59,41 @@ export function Header() {
                 />
             </div> */}
 
-            {/* Right-side Buttons */}
-            <div className="flex gap-4">
-                <Link to='/catalog'>
-                    <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">Catalog</button>
-                </Link>
-                <Link to='/about'>
-                    <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">About</button>
-                </Link>
-                {!isAuthenticated ?
-                <div className="flex gap-4">
-                    <Link to='/user/login'>
-                        <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">Login</button>
-                    </Link>
-                    <Link to='/user/register'>
-                        <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">Register</button>
-                    </Link>
-                </div>
-                :
-                <div>
-                    <Link to='/user/logout'>
-                        <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">Logout</button>
-                    </Link>
-                </div>
-                }
-            </div>
-
-        </nav>
-    )
+      {/* Right-side Buttons */}
+      <div className="flex gap-4">
+        <Link to="/catalog">
+          <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">
+            Catalog
+          </button>
+        </Link>
+        <Link to="/about">
+          <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">
+            About
+          </button>
+        </Link>
+        {!isAuthenticated ? (
+          <div className="flex gap-4">
+            <Link to="/user/login">
+              <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">
+                Login
+              </button>
+            </Link>
+            <Link to="/user/register">
+              <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">
+                Register
+              </button>
+            </Link>
+          </div>
+        ) : (
+          <div>
+            <Link to="/user/logout">
+              <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">
+                Logout
+              </button>
+            </Link>
+          </div>
+        )}
+      </div>
+    </nav>
+  );
 }
