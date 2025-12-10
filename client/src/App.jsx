@@ -12,6 +12,7 @@ import { UserProvider } from "./components/user-provider/UserProvider";
 import { Logout } from "./components/logout/Logout";
 import { ProtectedRoute } from "./components/protected-route/ProtectedRoute";
 import { FurnitureEdit } from "./components/furniture-edit/FurnitureEdit";
+import { FurnitureDelete } from "./components/furniture-delete/FurnitureDelete";
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
         <Route path="/catalog/:category" element={<Catalog />} />
         <Route path="/catalog/details/:id" element={<FurnitureDetails />} />
         <Route path="/catalog/edit/:id" element={<FurnitureEdit />} />
-        {/* <Route path="/catalog/details/:id" element={<FurnitureDetails />} /> */}
+        <Route path="/catalog/delete/:id" element={<FurnitureDelete />} />
         <Route path="/about" element={<About />} />
         <Route path="/user">
           <Route path="login" element={<Login />} />
