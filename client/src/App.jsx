@@ -8,11 +8,12 @@ import { Login } from "./components/login/Login";
 import { Register } from "./components/register/Register";
 import { CreateItem } from "./components/create-item/CreateItem";
 import { FurnitureDetails } from "./components/furniture-details/FurnitureDetails";
+import { UserProvider } from "./components/user-provider/UserProvider";
 
 function App() {
 
   return (
-    <>
+    <UserProvider>
       <Header />
       <Routes>
         <Route path="/" element={<Hero />} />
@@ -29,7 +30,7 @@ function App() {
         </Route>
       </Routes>
       <Footer />
-    </>
+    </UserProvider>
   )
 }
 
