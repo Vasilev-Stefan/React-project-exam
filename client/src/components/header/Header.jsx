@@ -1,6 +1,8 @@
 import { Link } from 'react-router'
+import { useUser } from '../../hooks/useUser'
 
 export function Header() {
+    const { isAuthenticated } = useUser()
     return (
         <nav className="text-white px-6 py-4 flex items-center justify-between sticky top-0 z-50" style={{ backgroundColor: '#222222' }}>
 
@@ -63,15 +65,22 @@ export function Header() {
                 <Link to='/about'>
                     <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">About</button>
                 </Link>
-                <Link to='/user/login'>
-                    <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">Login</button>
-                </Link>
-                <Link to='/user/register'>
-                    <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">Register</button>
-                </Link>
-                <Link to='/user/logout'>
-                    <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">Logout</button>
-                </Link>
+                {!isAuthenticated ?
+                <div className="flex gap-4">
+                    <Link to='/user/login'>
+                        <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">Login</button>
+                    </Link>
+                    <Link to='/user/register'>
+                        <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">Register</button>
+                    </Link>
+                </div>
+                :
+                <div>
+                    <Link to='/user/logout'>
+                        <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">Logout</button>
+                    </Link>
+                </div>
+                }
             </div>
 
         </nav>
