@@ -1342,7 +1342,8 @@
             "price": 899,
             "category": "Sofas",
             "imageUrl": "/images/sofa-velvet.png",
-            "_createdOn": 1717194350000
+            "_createdOn": 1717194350000,
+            "likedBy": []
     },
     "c48d2b6f-1a3c-4e59-9f81-7c3e124fbb21": {
         "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
@@ -1351,7 +1352,8 @@
         "price": 650,
         "category": "Tables",
         "imageUrl": "/images/oak-table.png",
-        "_createdOn": 1718208800000
+        "_createdOn": 1718208800000,
+        "likedBy": []
     },
     "f7b3e8c9-5a4d-4c2f-9e3a-1d9b0a6c4e3f": {
         "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
@@ -1360,7 +1362,8 @@
         "price": 1200,
         "category": "Beds",
         "imageUrl": "/images/memory-foam-bed.png",
-        "_createdOn": 1717194450000
+        "_createdOn": 1717194450000,
+        "likedBy": []
     },
     "9d7a6b1c-3e4f-5a6d-8c9b-2f1e3d7b4a8f": {
         "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
@@ -1369,7 +1372,8 @@
         "price": 199,
         "category": "Chairs",
         "imageUrl": "/images/office-chair.jpeg",
-        "_createdOn": 1707558400000
+        "_createdOn": 1707558400000,
+        "likedBy": []
     },
     "d4637c90-094b-4c02-843b-ef597d13afdf": {
         "_ownerId": "No owner yet",
@@ -1379,7 +1383,8 @@
         "category": "Lighting",
         "imageUrl": "/images/industrial-light.png",
         "_createdOn": 1764026788146,
-        "_id": "d4637c90-094b-4c02-843b-ef597d13afdf"
+        "_id": "d4637c90-094b-4c02-843b-ef597d13afdf",
+        "likedBy": []
     },
     "2ac1c431-b15b-42d1-993e-aea53bffecae": {
         "_ownerId": "No owner yet",
@@ -1389,7 +1394,8 @@
         "category": "Storage",
         "imageUrl": "/images/wall-shelf.png",
         "_createdOn": 1764027198591,
-        "_id": "2ac1c431-b15b-42d1-993e-aea53bffecae"
+        "_id": "2ac1c431-b15b-42d1-993e-aea53bffecae",
+        "likedBy": []
     },
     "e59b4d1c-7a3e-4b21-9c8a-0d3e2c9f4b7a": {
         "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
@@ -1398,9 +1404,12 @@
         "price": 45,
         "category": "Decor",
         "imageUrl": "/images/ceramic-vases.png",
-        "_createdOn": 1719194355000
+        "_createdOn": 1719194355000,
+        "likedBy": []
     }
-},
+}, likes: {
+
+}
     };
     var rules$1 = {
         users: {
