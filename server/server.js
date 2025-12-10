@@ -1334,51 +1334,73 @@
     };
     var seedData = {
         
-        games: {
-           "5c7d8f0e-3a9b-4c2d-9e1f-6a4b3c8d2e7a": {
+        furniture: {
+        "a12f9c3d-4b6e-8d9a-1c2b-3e4f567a8b9c": {
             "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-            "title": "The Witcher 3",
-            "genre": "Open World",
-            "players": 32000,
-            "date": "2015-05-19",
-            "imageUrl": "/public/images/witcher.png",
-            "summary": "A story-driven, open world fantasy RPG. Play as Geralt of Rivia, a monster slayer for hire, who must find the Child of Prophecy in a vast, war-torn world. The game is known for its morally gray choices, mature storyline, and expansive world exploration.",
-            "_createdOn": 1617194350000
-        },
-        "7b9a2c4f-1d5e-4b6c-8a3d-2f1e0g3h4i5j": {
-            "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
-            "title": "Elden Ring",
-            "genre": "Action RPG",
-            "players": 105000,
-            "date": "2022-02-25",
-            "imageUrl": "/public/images/elden ring.png",
-            "summary": "A monumental fantasy action RPG developed by FromSoftware and Bandai Namco. Set in the Lands Between, players embark on an epic quest to become the Elden Lord, exploring a vast open world designed by Hidetaka Miyazaki, with worldbuilding contributed by fantasy author George R. R. Martin.",
-            "_createdOn": 1645708800000
-        },
-        "3d4e5f6g-7h8i-9j0k-1l2m-3n4o5p6q7r8s": {
-            "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-            "title": "Minecraft",
-            "genre": "Sandbox",
-            "players": 1400000,
-            "date": "2011-11-18",
-            "imageUrl": "/public/images/minecraft.png",
-            "summary": "Minecraft is a sandbox video game where players explore a blocky, procedurally generated 3D world with infinite terrain. Players may discover and extract raw materials, craft tools and items, and build structures, earthworks and simple machines.",
-            "_createdOn": 1617194450000
-        },
-        "9f8e7d6c-5b4a-3c2d-1e0f-9g8h7i6j5k4l": {
-            "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
-            "title": "Cyberpunk 2077",
-            "genre": "Action RPG",
-            "players": 85000,
-            "date": "2020-12-10",
-            "imageUrl": "/public/images/cyberpunk.png",
-            "summary": "An open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification. You play as V, a mercenary outlaw going after a one-of-a-kind implant that is the key to immortality.",
-            "_createdOn": 1607558400000
-            }
-        },
-        comments: {
-        
-        }
+            "name": "Modern Velvet Sofa",
+            "description": "A luxurious 3-seater velvet sofa with deep cushions and a sleek, modern design. Perfect for contemporary living rooms.",
+            "price": 899,
+            "category": "Sofas",
+            "imageUrl": "/images/sofa-velvet.png",
+            "_createdOn": 1717194350000
+    },
+    "c48d2b6f-1a3c-4e59-9f81-7c3e124fbb21": {
+        "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+        "name": "Oak Dining Table",
+        "description": "A handcrafted oak dining table with a natural wood finish. Seats up to six people comfortably.",
+        "price": 650,
+        "category": "Tables",
+        "imageUrl": "/images/oak-table.png",
+        "_createdOn": 1718208800000
+    },
+    "f7b3e8c9-5a4d-4c2f-9e3a-1d9b0a6c4e3f": {
+        "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+        "name": "Memory Foam Bed",
+        "description": "A queen-size memory foam bed designed to provide optimal support and comfort for a restful night’s sleep.",
+        "price": 1200,
+        "category": "Beds",
+        "imageUrl": "/images/memory-foam-bed.png",
+        "_createdOn": 1717194450000
+    },
+    "9d7a6b1c-3e4f-5a6d-8c9b-2f1e3d7b4a8f": {
+        "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+        "name": "Ergonomic Office Chair",
+        "description": "A breathable mesh office chair with lumbar support, adjustable height, and a comfortable cushioned seat.",
+        "price": 199,
+        "category": "Chairs",
+        "imageUrl": "/images/office-chair.jpeg",
+        "_createdOn": 1707558400000
+    },
+    "d4637c90-094b-4c02-843b-ef597d13afdf": {
+        "_ownerId": "No owner yet",
+        "name": "Industrial Pendant Light",
+        "description": "A matte-black industrial-style pendant light designed to add character and ambient lighting to modern spaces.",
+        "price": 129,
+        "category": "Lighting",
+        "imageUrl": "/images/industrial-light.png",
+        "_createdOn": 1764026788146,
+        "_id": "d4637c90-094b-4c02-843b-ef597d13afdf"
+    },
+    "2ac1c431-b15b-42d1-993e-aea53bffecae": {
+        "_ownerId": "No owner yet",
+        "name": "Minimalist Wall Shelf",
+        "description": "A floating wooden wall shelf ideal for storing books, decor items, and small household essentials.",
+        "price": 79,
+        "category": "Storage",
+        "imageUrl": "/images/wall-shelf.png",
+        "_createdOn": 1764027198591,
+        "_id": "2ac1c431-b15b-42d1-993e-aea53bffecae"
+    },
+    "e59b4d1c-7a3e-4b21-9c8a-0d3e2c9f4b7a": {
+        "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+        "name": "Ceramic Vase Set",
+        "description": "A set of handcrafted ceramic vases in matte pastel tones. Perfect for modern and minimalist home decor.",
+        "price": 45,
+        "category": "Decor",
+        "imageUrl": "/images/ceramic-vases.png",
+        "_createdOn": 1719194355000
+    }
+},
     };
     var rules$1 = {
         users: {
