@@ -11,6 +11,7 @@ import { FurnitureDetails } from "./components/furniture-details/FurnitureDetail
 import { UserProvider } from "./components/user-provider/UserProvider";
 import { Logout } from "./components/logout/Logout";
 import { ProtectedRoute } from "./components/protected-route/ProtectedRoute";
+import { FurnitureEdit } from "./components/furniture-edit/FurnitureEdit";
 
 function App() {
 
@@ -22,7 +23,7 @@ function App() {
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/catalog/:category" element={<Catalog />} />
         <Route path="/catalog/details/:id" element={<FurnitureDetails />} />
-        <Route path="/catalog/edit/:id" element={<FurnitureDetails />} />
+        <Route path="/catalog/edit/:id" element={<FurnitureEdit />} />
         {/* <Route path="/catalog/details/:id" element={<FurnitureDetails />} /> */}
         <Route path="/about" element={<About />} />
         <Route path="/user">
