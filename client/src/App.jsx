@@ -25,9 +25,21 @@ function App() {
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/catalog/:category" element={<Catalog />} />
         <Route path="/catalog/details/:id" element={<FurnitureDetails />} />
-        <Route path="/catalog/edit/:id" element={<FurnitureEdit />} />
-        <Route path="/catalog/delete/:id" element={<FurnitureDelete />} />
-        <Route path="/catalog/like/:id" element={<FurnitureLike />} />
+        <Route path="/catalog/edit/:id" element={
+          <ProtectedRoute>
+            <FurnitureEdit />
+          </ProtectedRoute>
+          } />
+        <Route path="/catalog/delete/:id" element={
+          <ProtectedRoute>
+            <FurnitureDelete />
+          </ProtectedRoute>
+          } />
+        <Route path="/catalog/like/:id" element={
+          <ProtectedRoute>
+            <FurnitureLike />
+          </ProtectedRoute>
+          } />
         <Route path="/about" element={<About />} />
         <Route path="/user">
           <Route path="login" element={<Login />} />

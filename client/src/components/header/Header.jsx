@@ -49,13 +49,13 @@ export function Header() {
 
 
             {/* Search Bar (center) */}
-            <div className="flex-1 mx-6">
+            {/* <div className="flex-1 mx-6">
                 <input
                     type="text"
                     placeholder="Search..."
                     className="w-full max-w-md px-4 py-2 rounded-md bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
-            </div>
+            </div> */}
 
             {/* Right-side Buttons */}
             <div className="flex gap-4">

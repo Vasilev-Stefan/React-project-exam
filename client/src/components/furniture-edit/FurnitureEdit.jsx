@@ -2,64 +2,74 @@ import { useNavigate, useParams } from "react-router";
 import { useFetch } from "../../hooks/useFetch";
 import { useForm } from "../../hooks/useForm";
 import { useEffect } from "react";
+import { useUser } from "../../hooks/useUser";
 
 export function FurnitureEdit() {
-    const { id } = useParams();
-    const navigate = useNavigate()
-    
-    const { request, data: item} = useFetch(`data/furniture/${id}`, [id])
-    console.log(item)
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const { user } = useUser;
 
-    const validator = (data) => {
-        const errors = {}
-        if(!data.name) {
-            errors.name = 'Product name is required'
-        }
+  const { request, data: item } = useFetch(`data/furniture/${id}`, [id]);
 
-        if(!data.description) {
-            errors.description = 'Description is required'
-        }
+  useEffect(() => {
+    if (item && user && item._ownerId !== user._id) {
+      navigate("/catalog");
+    }
+  }, [item, user, navigate]);
 
-        if(!data.price) {
-            errors.price = 'Price is required'
-        }
-
-        if(!data.category) {
-            errors.category = 'Category is required'
-        }
-
-        if(!data.imageUrl) {
-            errors.imageUrl = 'Image is required'
-        }
-
-        return errors
+  const validator = (data) => {
+    const errors = {};
+    if (!data.name) {
+      errors.name = "Product name is required";
     }
 
-    const edit = async (data) => {
-        data.price = Number(data.price)
-        try {
-            const result = await request(`data/furniture/${id}`, 'PUT', data)
-            console.log(result)
-            navigate(`/catalog/details/${id}`)
-        } catch (error) {
-            alert(error.message)
-        }
+    if (!data.description) {
+      errors.description = "Description is required";
     }
 
-    const { data, setData , errors, onSubmitHandler, onChangeHandler } = useForm(item, edit, validator)
+    if (!data.price) {
+      errors.price = "Price is required";
+    }
 
-    useEffect(() => {
-      if(item){
-        setData({
+    if (!data.category) {
+      errors.category = "Category is required";
+    }
+
+    if (!data.imageUrl) {
+      errors.imageUrl = "Image is required";
+    }
+
+    return errors;
+  };
+
+  const edit = async (data) => {
+    data.price = Number(data.price);
+    try {
+      const result = await request(`data/furniture/${id}`, "PUT", data);
+      console.log(result);
+      navigate(`/catalog/details/${id}`);
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
+  const { data, setData, errors, onSubmitHandler, onChangeHandler } = useForm(
+    item,
+    edit,
+    validator
+  );
+
+  useEffect(() => {
+    if (item) {
+      setData({
         name: item?.name,
         description: item?.description,
         price: item?.price,
         category: item.category,
         imageUrl: item.imageUrl,
-      })
-      }
-
-    }, [setData, item])
+      });
+    }
+  }, [setData, item]);
 
   return (
     <div
@@ -71,19 +81,16 @@ export function FurnitureEdit() {
       </h1>
 
       <div className="max-w-3xl mx-auto bg-[#222222] p-10 rounded-2xl shadow-lg">
-        <form
-          className="space-y-6"
-          action={onSubmitHandler}
-        >
+        <form className="space-y-6" action={onSubmitHandler}>
           {/* Name */}
           <div>
             <label className="block text-gray-300 mb-2 font-semibold">
               Product Name
             </label>
             <input
-            name="name"
-            onChange={onChangeHandler}
-            value={data?.name}
+              name="name"
+              onChange={onChangeHandler}
+              value={data?.name}
               type="text"
               placeholder="e.g., Modern Sofa"
               className="w-full px-4 py-2 bg-[#111111] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600"
@@ -98,8 +105,8 @@ export function FurnitureEdit() {
             </label>
             <textarea
               name="description"
-            onChange={onChangeHandler}
-            value={data?.description}
+              onChange={onChangeHandler}
+              value={data?.description}
               placeholder="Short description of the item..."
               rows="4"
               className="w-full px-4 py-2 bg-[#111111] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600"
@@ -114,8 +121,8 @@ export function FurnitureEdit() {
             </label>
             <input
               name="price"
-            onChange={onChangeHandler}
-            value={data?.price}
+              onChange={onChangeHandler}
+              value={data?.price}
               type="number"
               placeholder="e.g., 499"
               className="w-full px-4 py-2 bg-[#111111] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600"
@@ -130,8 +137,8 @@ export function FurnitureEdit() {
             </label>
             <select
               name="category"
-            onChange={onChangeHandler}
-            value={data?.category}
+              onChange={onChangeHandler}
+              value={data?.category}
               className="w-full px-4 py-2 bg-[#111111] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600"
             >
               <option value="sofas">Sofas</option>
@@ -152,8 +159,8 @@ export function FurnitureEdit() {
             </label>
             <input
               name="imageUrl"
-            onChange={onChangeHandler}
-            value={data?.imageUrl}
+              onChange={onChangeHandler}
+              value={data?.imageUrl}
               type="text"
               placeholder="https://example.com/image.jpg"
               className="w-full px-4 py-2 bg-[#111111] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600"
