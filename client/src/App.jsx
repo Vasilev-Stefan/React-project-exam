@@ -22,11 +22,17 @@ function App() {
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/catalog/:category" element={<Catalog />} />
         <Route path="/catalog/details/:id" element={<FurnitureDetails />} />
+        <Route path="/catalog/edit/:id" element={<FurnitureDetails />} />
+        {/* <Route path="/catalog/details/:id" element={<FurnitureDetails />} /> */}
         <Route path="/about" element={<About />} />
         <Route path="/user">
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
-          <Route path="logout" element={<Logout />} />
+          <Route path="logout" element={
+            <ProtectedRoute>
+              <Logout />
+            </ProtectedRoute>
+            } />
         </Route>
         <Route path="/furniture">
           <Route path="create" element={
