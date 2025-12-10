@@ -42,20 +42,19 @@ export function useFetch(url, deps = []) {
   useEffect(() => {
     if (!url) return;
 
-    let isActive = true
+    let isActive = true;
 
     fetch(`http://localhost:3030/${url}`)
-    .then((res) => res.json())
-    .then(result => {
-        if (isActive) setData(result)
-    })
-    .catch((error) => alert(error));
+      .then((res) => res.json())
+      .then((result) => {
+        if (isActive) setData(result);
+      })
+      .catch((error) => alert(error));
 
     return () => {
-      isActive = false
-    }
+      isActive = false;
+    };
   }, [url, ...deps]);
-
 
   return {
     data,

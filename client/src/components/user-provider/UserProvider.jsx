@@ -6,25 +6,34 @@ export function UserProvider({ children }) {
     const storedUser = localStorage.getItem("user");
     return storedUser ? JSON.parse(storedUser) : null;
   });
-  const [isAuthenticated, setIsAuthenticated] = useState(() => !!localStorage.getItem("user"));
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    () => !!localStorage.getItem("user")
+  );
 
   const login = (userData) => {
     const dataToStore = {
       email: userData.email,
       name: userData.name,
       _id: userData._id,
-      accessToken: userData.accessToken
-    }
+      accessToken: userData.accessToken,
+    };
     setUser(dataToStore);
     setIsAuthenticated(true);
-    localStorage.setItem("user", JSON.stringify({email: userData.email, accessToken: userData.accessToken, _id: userData._id}));
+    localStorage.setItem(
+      "user",
+      JSON.stringify({
+        email: userData.email,
+        accessToken: userData.accessToken,
+        _id: userData._id,
+      })
+    );
   };
 
   const logout = () => {
-    setUser(null)
+    setUser(null);
     localStorage.removeItem("user");
-    setIsAuthenticated(false)
-};
+    setIsAuthenticated(false);
+  };
 
   return (
     <UserContext.Provider value={{ user, login, logout, isAuthenticated }}>

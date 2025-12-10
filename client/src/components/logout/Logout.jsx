@@ -5,13 +5,10 @@ import { useEffect } from "react";
 
 export function Logout() {
   const { logout } = useUser();
-  const { request } = useFetch()
+  const { request } = useFetch();
   const navigate = useNavigate();
 
   useEffect(() => {
-      request('users/logout')
-      .then(logout())
-      .finally(navigate('/'))
-  }, [])
-  
+    request("users/logout").then(logout()).finally(navigate("/"));
+  }, [logout, navigate, request]);
 }

@@ -8,30 +8,28 @@ export function useForm(initialValues, onSumbitCallback, validate) {
     const { name, value } = e.target;
 
     setData((state) => ({
-        ...state,
-        [name]: value
-    }))
+      ...state,
+      [name]: value,
+    }));
   };
 
   const onSubmitHandler = () => {
+    const validationErrors = validate ? validate(data) : {};
 
-    const validationErrors = validate ? validate(data) : {}
-
-    if(Object.keys(validationErrors).length > 0){
-        setErrors(validationErrors)
-        return;
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
     }
 
-    setErrors({})
-    onSumbitCallback(data)
-  }
+    setErrors({});
+    onSumbitCallback(data);
+  };
 
   const inputFiller = (name) => ({
     name,
     value: data[name],
-    onChange: onChangeHandler
-
-  })
+    onChange: onChangeHandler,
+  });
 
   return {
     data,
@@ -40,8 +38,6 @@ export function useForm(initialValues, onSumbitCallback, validate) {
     onChangeHandler,
     onSubmitHandler,
     setErrors,
-    inputFiller
-  }
+    inputFiller,
+  };
 }
-
-

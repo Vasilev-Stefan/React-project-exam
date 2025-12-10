@@ -17,10 +17,13 @@ export function FurnitureDelete() {
       return;
     }
 
-    const isConfirmed = confirm("Are you sure you want to delete this furniture?");
+    const isConfirmed = confirm(
+      "Are you sure you want to delete this furniture?"
+    );
     if (isConfirmed) {
       request(`data/furniture/${id}`, "DELETE")
         .then(() => navigate("/catalog", { replace: true }))
+        .then(navigate('/catalog'))
         .catch((error) => alert(error.message));
     } else {
       navigate("/catalog", { replace: true });

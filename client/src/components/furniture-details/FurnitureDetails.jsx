@@ -7,29 +7,33 @@ export function FurnitureDetails() {
   const { id } = useParams();
   const { user, isAuthenticated } = useUser();
   const { data: item } = useFetch(`data/furniture/${id}`, [id]);
-  const [ isLiked, setIsLiked ] = useState(false)
-  const [ furnitureLikes, setFurnitureLikes ] = useState(0)
-  
+  const [isLiked, setIsLiked] = useState(false);
+  const [furnitureLikes, setFurnitureLikes] = useState(0);
+
   useEffect(() => {
     async function fetchLikedItems() {
-        if(!user?._id) return
-        const response = await fetch(`http://localhost:3030/data/likes?where=likedBy%3D%22${user._id}%22`)
-        const likedItems = await response.json()
-        const likedRecords = likedItems.find(like => like.furnitureId === id)
-        setIsLiked(!!likedRecords)
+      if (!user?._id) return;
+      const response = await fetch(
+        `http://localhost:3030/data/likes?where=likedBy%3D%22${user._id}%22`
+      );
+      const likedItems = await response.json();
+      const likedRecords = likedItems.find((like) => like.furnitureId === id);
+      setIsLiked(!!likedRecords);
     }
 
     async function furnitureLikes() {
-        const response = await fetch(`http://localhost:3030/data/likes?where=furnitureId%3D%22${id}%22`)
-        const likes = await response.json()
-        const count = likes.length
-        setFurnitureLikes(count)
+      const response = await fetch(
+        `http://localhost:3030/data/likes?where=furnitureId%3D%22${id}%22`
+      );
+      const likes = await response.json();
+      const count = likes.length;
+      setFurnitureLikes(count);
     }
-    fetchLikedItems()
-    furnitureLikes()
-  }, [user])
-  
-  console.log(furnitureLikes)
+    fetchLikedItems();
+    furnitureLikes();
+  }, [user, id]);
+
+  console.log(furnitureLikes);
   return (
     <div
       className="bg-[#1a1a1a] text-white p-10 flex justify-center"
@@ -87,24 +91,28 @@ export function FurnitureDetails() {
             ) : (
               ""
             )}
-
-            <Link
-  to={isAuthenticated 
-        ? isLiked 
-          ? '#' 
-          : `/catalog/like/${id}` 
-        : '/user/login'}
-  className={`w-full py-3 rounded-md font-semibold transition text-lg flex items-center justify-between px-4
-    ${isAuthenticated && isLiked 
-      ? 'bg-gray-500 cursor-not-allowed'  // greyed out for already liked items
-      : 'bg-pink-600 hover:bg-pink-500'   // normal like button
+            {(!user || user?._id !== item?._ownerId) && (
+              <Link
+                to={
+                  isAuthenticated
+                    ? isLiked
+                      ? "#"
+                      : `/catalog/like/${id}`
+                    : "/user/login"
+                }
+                className={`w-full py-3 rounded-md font-semibold transition text-lg flex items-center justify-between px-4
+    ${
+      isAuthenticated && isLiked
+        ? "bg-gray-500 cursor-not-allowed"
+        : "bg-pink-600 hover:bg-pink-500"
     }`}
->
-  {isAuthenticated && isLiked ? 'Already liked' : 'Like'}
-  <span className="bg-white text-pink-600 px-2 py-1 rounded-full text-sm">
-    Likes: {furnitureLikes}
-  </span>
-</Link>
+              >
+                {isAuthenticated && isLiked ? "Already liked" : "Like"}
+                <span className="bg-white text-pink-600 px-2 py-1 rounded-full text-sm">
+                  Likes: {furnitureLikes}
+                </span>
+              </Link>
+            )}
           </div>
         </div>
       </div>
