@@ -77,6 +77,7 @@ export function CreateItem() {
                             placeholder="e.g., Modern Sofa"
                             className="w-full px-4 py-2 bg-[#111111] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600"
                         />
+                        {errors.name && <p>{errors.name}</p>}
                     </div>
 
                     {/* Description */}
@@ -90,6 +91,7 @@ export function CreateItem() {
                             rows="4"
                             className="w-full px-4 py-2 bg-[#111111] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600"
                         ></textarea>
+                        {errors.description && <p>{errors.description}</p>}
                     </div>
 
                     {/* Price */}
@@ -103,6 +105,7 @@ export function CreateItem() {
                             placeholder="e.g., 499"
                             className="w-full px-4 py-2 bg-[#111111] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600"
                         />
+                        {errors.price && <p>{errors.price}</p>}
                     </div>
 
                     {/* Category */}
@@ -135,6 +138,7 @@ export function CreateItem() {
                             placeholder="https://example.com/image.jpg"
                             className="w-full px-4 py-2 bg-[#111111] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600"
                         />
+                        {errors.imageUrl && <p>{errors.imageUrl}</p>}
                     </div>
 
                     {/* Submit Button */}
