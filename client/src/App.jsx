@@ -9,6 +9,7 @@ import { Register } from "./components/register/Register";
 import { CreateItem } from "./components/create-item/CreateItem";
 import { FurnitureDetails } from "./components/furniture-details/FurnitureDetails";
 import { UserProvider } from "./components/user-provider/UserProvider";
+import { Logout } from "./components/logout/Logout";
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/user">
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
+          <Route path="logout" element={<Logout />} />
         </Route>
         <Route path="/furniture">
           <Route path="create" element={<CreateItem />} />
