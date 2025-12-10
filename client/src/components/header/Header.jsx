@@ -85,11 +85,27 @@ export function Header() {
             </Link>
           </div>
         ) : (
-          <div>
+          <div className="flex gap-4">
             <Link to="/user/logout">
               <button className="px-4 py-2 rounded bg-indigo-800 hover:bg-indigo-600 text-white transition">
                 Logout
               </button>
+            </Link>
+            <Link to={`/user/profile/${user._id}`}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-6 h-6 text-white"
+              >
+                <path d="M20 21v-2a4 4 0 00-3-3.87" />
+                <path d="M4 21v-2a4 4 0 013-3.87" />
+                <path d="M12 12a5 5 0 100-10 5 5 0 000 10z" />
+              </svg>
             </Link>
           </div>
         )}

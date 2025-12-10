@@ -14,6 +14,7 @@ import { ProtectedRoute } from "./components/protected-route/ProtectedRoute";
 import { FurnitureEdit } from "./components/furniture-edit/FurnitureEdit";
 import { FurnitureDelete } from "./components/furniture-delete/FurnitureDelete";
 import { FurnitureLike } from "./components/furniture-like/FurnitureLike";
+import { UserProfile } from "./components/user-profile/UserProfile";
 
 function App() {
 
@@ -44,6 +45,7 @@ function App() {
         <Route path="/user">
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
+          <Route path="profile/:id" element={<UserProfile />} />
           <Route path="logout" element={
             <ProtectedRoute>
               <Logout />
